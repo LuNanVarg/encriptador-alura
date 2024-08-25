@@ -1,0 +1,67 @@
+:root {
+    --colo-body: #e5e5e5;
+    --color-tit: #0B60B0;
+    --color-dark:#222;
+    --color-box: rgb(10, 10, 9);
+    --color-shaw: rgba(0, 0.3, 0.4, 0.5);
+    --color-prim: #fff;
+    --color-sec: #353837;
+    --color-terc:#d8dfe8;
+    --color-four:#000;
+}
+
+.switchDark {
+    background-color: var(--color-tit);
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.switchDark span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    color: var(--color-prim);
+    background: none;
+}
+
+.switchDark::after {
+    display: block;
+    background: var(--colo-body);
+    width: 1.8rem;
+    height: 1.8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 1.5px 1.5px var(--color-shaw);
+    content: "";
+}
+.switchDark.active {
+    background: #F7BE16;
+}
+.switchDark.active::after {
+    left: unset;
+    right: 0;
+}
+@media (max-width: 400px) {
+
+    .switchDark.active{
+        height: 30px;
+        margin: 10px 0px 10px 0px;
+    }
+
+    .switchDark{
+        height: 30px;
+        margin: 10px 0px 10px 0px;
+    }
+}
+
